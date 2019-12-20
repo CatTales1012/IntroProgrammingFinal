@@ -22,6 +22,6 @@ class Chores {
 			names[i] = input.nextLine();
 		}
 		
-		
+		//page 255 has a random pull for generator- check here distracto
 	}
 }
