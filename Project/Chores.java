@@ -10,39 +10,28 @@ class Chores {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		
-		String[] bigChores = {"Kitchen", "Living Room", "Bathroom", "Front Yard / Porch"};
-		String[] smallChores = {"Sweep / Mop", "Vacuum / Dust", "Mirrors / Windows", "Water Plants"};
+		String[] bigChores = {"Kitchen", "Living Room", "Bathroom", "Front Yard / Porch", "Hallway / Closet (Organize)", "Back Yard/ Porch"};
+		String[] smallChores = {"Sweep / Mop", "Vacuum / Dust", "Mirrors / Windows", "Water Plants", "Put Dishes Away", "Rearrange Bathroom Counter"};
 		
-		System.out.print("Please enter between 2-6 for number of people: ");
+		System.out.print("Please enter between 2-4 for number of people: ");
 		int numOfPeople = input.nextInt();
 		
-		String[] names = new String[numOfPeople + 1];
+		String[] names = new String[numOfPeople];
 		
 		System.out.print("Please Enter " + numOfPeople + " names: ");
-		for(int i = 0; i < (numOfPeople + 1); i++){
-			names[i] = input.nextLine();
+		for(int i = 0; i < names.length; i++){
+			names[i] = input.next();
 		}
 		
+		System.out.println("--------------------------");
 		
-		//use a string to contain an already used random number to avoid repeats. 
-		String bChoose = "";
-		String sChoose = "";
-		
-		for(int i = 1; i < names.length; i++){
-			int big = (int)(Math.random() * bigChores.length);
-			while (bChoose.contains(Integer.toString(big))) {
-				big = (int)(Math.random() * bigChores.length);
-			}
-			bChoose += big + " ";
-			
-			int small = (int)(Math.random() * smallChores.length);
-			while (sChoose.contains(Integer.toString(small))) {
-				small = (int)(Math.random() * smallChores.length);
-			}
-			sChoose += small + " ";
-
-			System.out.println(names[i] + " - " + bigChores[big] + ", " + smallChores[small] );
+		for(int i = 0; i < bigChores.length; i++){
+			int person = (int)(Math.random() * names.length);
+			System.out.println(bigChores[i] + " : " + names[person]);
 		}
-		
+		for(int i = 0; i < smallChores.length; i++){
+			int person = (int)(Math.random() * names.length);
+			System.out.println(smallChores[i] + " : " + names[person]);
+		}	
 	}
 }
