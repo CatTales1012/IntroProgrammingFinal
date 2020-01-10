@@ -1,4 +1,4 @@
-# ReadMe
+# Chore Generator
 ## Synopsis 
 This is a generator to tell who will do what chores at absolute random. It has a list of big and small chores, and assigns a person to it at random from the input names and number (for the number of people). 
 ## Motivation
